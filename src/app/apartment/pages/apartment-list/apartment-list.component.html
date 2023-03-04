@@ -1,0 +1,44 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div
+          class="col mb-4"
+          *ngFor="let apartment of apartmentsData"
+          [routerLink]="['apartment', apartment.attributes.field_inmu_refe]"
+        >
+          <div class="card txt-color card-h">
+            <img
+              src="{{ apartment.attributes.field_inmu_imag_arra[0] }}"
+              class="card-img-top card-img-size"
+              alt="Inmueble en {{ apartment.attributes.field_inmu_tipo_via }} {{
+                apartment.attributes.field_inmu_nomb_call
+              }}"
+            />
+            <p class="card-title card-mg-txt">
+              {{
+                apartment.attributes.field_inmu_prec
+                  | currency : "EUR" : "symbol-narrow" : "1.0-0"
+              }}
+            </p>
+            <p class="card-text card-mg-txt">
+              Inmueble en {{ apartment.attributes.field_inmu_tipo_via }}
+              {{ apartment.attributes.field_inmu_nomb_call }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-10 text-center">
+      <button
+        type="button"
+        class="btn btn-orange btn-sm m-3"
+        (click)="showMore()"
+      >
+        Mostrar Más
+      </button>
+    </div>
+  </div>
+</div>

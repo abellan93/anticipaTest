@@ -1,0 +1,22 @@
+.btn-orange {
+  background-color: #f25c0f;
+  color: #fff;
+}
+
+.btn-orange:hover {
+  background-color: #f25c0f;
+  color: #fff;
+}
+.card {
+  cursor: pointer;
+}
+.card-mg-txt {
+  font-weight: bold;
+  margin-left: 5px;
+}
+.card-img-size {
+  height: 139px;
+}
+.card-h {
+  height: 255px;
+}

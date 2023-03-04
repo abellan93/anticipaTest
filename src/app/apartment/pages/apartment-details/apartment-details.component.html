@@ -1,0 +1,51 @@
+<div
+  class="spinner-grow spinner-xl text-dark my-5 mx-auto d-block size-spinner"
+  role="status"
+  *ngIf="!infoApartment; else data"
+></div>
+
+<ng-template #data>
+  <div class="container">
+    <button
+      routerLink=""
+      type="button"
+      class="btn txt-color col-md-1 position-relative mx-2"
+    >
+      <i class="bi bi-arrow-left"></i>
+      Volver
+    </button>
+  </div>
+  <div class="container low-margin txt-color" *ngIf="infoApartment">
+    <div class="row">
+      <div class="col-md-6 position-relative">
+        <img
+          src="{{ infoApartment.data[0].attributes.field_inmu_imag_arra[0] }}"
+          alt="{{ infoApartment.data[0].attributes.field_inmu_tipo_via }} {{
+            infoApartment.data[0].attributes.field_inmu_nomb_call
+          }}"
+          class="img-fluid rounded mx-2"
+        />
+      </div>
+      <div class="col-md-6 vertical-center">
+        <h2>
+          {{ infoApartment.data[0].attributes.field_inmu_tipo_via }}
+          {{ infoApartment.data[0].attributes.field_inmu_nomb_call }}
+        </h2>
+        <p class="lead mt-4">
+          {{
+            infoApartment.data[0].attributes.field_inmu_prec
+              | currency : "EUR" : "symbol-narrow" : "1.0-0"
+          }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container txt-color" *ngIf="infoApartment">
+    <div class="mx-2">
+      <h5>Descripción</h5>
+      <p>
+        {{ infoApartment.data[0].attributes.field_inmu_desc.value }}
+      </p>
+    </div>
+  </div>
+</ng-template>
