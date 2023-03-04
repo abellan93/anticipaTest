@@ -1,27 +1,9 @@
 # AnticipaTest
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+El proyecto está planteado tal cuál se proponía en la presentación de la prueba, con lanzar el comando "npm i" será suficiente para ponerlo en marcha.
+Lo he estructurado con un módulo en el cuál pongo ambos componentes cómo individuales pero pertenecientes al módulo "apartment".
+Ambos estarán en la carpeta pages, para denominar tanto a la lista, cómo al detalle, cómo páginas independientes pero del mismo módulo.
+En cuanto a los servicios llamé al endpoint "https://apiint.holapisos.com/es/api/node/inmuebles" para traer todos los datos y tratarlos en el propio servicio, añadiendo el botón de mostrar más con su funcionalidad desde el propio servicio.
+También he tipado el la API con una interfaz llamada "InfoApartments" para evitar problemas de tipado.
+En los respectivos componentes llamo al servicio oportuno para obtener los datos.
+En cuanto al html del detalle, para evitar una imagen negativa en los tiempos de espera, si entramos en cualquier apartamento y tarda en mostrar los datos, se mostrará un spinner.
+Cómo extra, en el componente del detalle, en lugar de usar un método para obtener el id, guardarlo en una variable y llamar al servicio pasándole este id, he usado SwitchMap de rxjs.
